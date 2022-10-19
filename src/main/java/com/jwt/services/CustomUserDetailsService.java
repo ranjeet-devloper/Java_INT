@@ -21,13 +21,16 @@ public class CustomUserDetailsService implements UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		// TODO Auto-generated method stub
+		
+//		Without database
 //		if(username.equals("ranjeet"))
 //		{
 //			return new User("ranjeet","int@123",new ArrayList<>());
 //		}
 //		else
 //			 throw new UsernameNotFoundException("user not found");
-//		
+//	
+//		with database
 		JwtRequest user= userlogindao.findByUsername(username);
 		if(user==null)
 		{
